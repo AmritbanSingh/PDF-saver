@@ -122,15 +122,18 @@ backend:
 
   - task: "Folder Management API"
     implemented: true
-    working: "NA"  # needs testing
+    working: true
     file: "/app/backend/server.py"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
         -working: "NA"
         -agent: "main"
         -comment: "Implemented CRUD endpoints for folders: GET, POST, PUT, DELETE /api/folders"
+        -working: true
+        -agent: "testing"
+        -comment: "✅ COMPREHENSIVE TESTING PASSED: All folder CRUD operations working perfectly. Tested: (1) Create root folder - SUCCESS, (2) Create subfolder with parent_id - SUCCESS, (3) List all folders - SUCCESS, (4) Rename folder - SUCCESS, (5) Delete folder with cascade to files - SUCCESS, (6) Error handling for non-existent folders (404) - SUCCESS. UUID generation, parent-child relationships, and cascade deletion all working correctly."
 
   - task: "File Management API"
     implemented: true
