@@ -107,15 +107,18 @@ user_problem_statement: "Build a website for institute to save PDFs where users 
 backend:
   - task: "PDF Upload API"
     implemented: true
-    working: "NA"  # needs testing
+    working: true
     file: "/app/backend/server.py"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
         -working: "NA"
         -agent: "main"
         -comment: "Implemented POST /api/files/upload endpoint with base64 storage and PDF validation"
+        -working: true
+        -agent: "testing"
+        -comment: "✅ COMPREHENSIVE TESTING PASSED: PDF upload API working perfectly. Tested: (1) Valid PDF upload to folder - SUCCESS, (2) Valid PDF upload to root - SUCCESS, (3) Non-PDF file rejection with proper 400 error - SUCCESS. File validation, base64 storage, and folder assignment all working correctly. Files stored with proper metadata including size, upload timestamp, and UUID generation."
 
   - task: "Folder Management API"
     implemented: true
